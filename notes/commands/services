@@ -1,0 +1,148 @@
+# Linux Services
+
+## systemctl
+
+`systemctl` is the command used to manage and inspect services controlled by `systemd`.
+
+`systemd` is the service manager used by many modern Linux distributions, including Kali Linux.
+
+### Check the status of a service
+
+```bash
+systemctl status <service>
+```
+
+Example:
+
+```bash
+systemctl status ssh
+```
+
+Shows whether the service is running, stopped, or has failed.
+
+### Start a service
+
+```bash
+sudo systemctl start <service>
+```
+
+Starts the service immediately.
+
+```bash
+sudo systemctl start ssh
+```
+
+### Stop a service
+
+```bash
+sudo systemctl stop <service>
+```
+
+Stops the service immediately.
+
+### Restart a service
+
+```bash
+sudo systemctl restart <service>
+```
+
+Stops and starts the service again.
+
+Useful after changing a service's configuration.
+
+### Reload a service
+
+```bash
+sudo systemctl reload <service>
+```
+
+Reloads the service's configuration without completely restarting it, if the service supports it.
+
+### Enable a service
+
+```bash
+sudo systemctl enable <service>
+```
+
+Configures the service to start automatically when the system boots.
+
+**Note:** `enable` does not start the service immediately.
+
+### Disable a service
+
+```bash
+sudo systemctl disable <service>
+```
+
+Prevents the service from starting automatically at boot.
+
+**Note:** `disable` does not necessarily stop a service that is currently running.
+
+### Enable and start a service
+
+```bash
+sudo systemctl enable --now <service>
+```
+
+Enables the service to start at boot and starts it immediately.
+
+Example:
+
+```bash
+sudo systemctl enable --now ssh
+```
+
+### Disable and stop a service
+
+```bash
+sudo systemctl disable --now <service>
+```
+
+Disables automatic startup and stops the service immediately.
+
+### List running services
+
+```bash
+systemctl list-units --type=service --state=running
+```
+
+Displays the services that are currently running.
+
+### List all loaded services
+
+```bash
+systemctl list-units --type=service
+```
+
+Displays the service units currently loaded by `systemd`.
+
+---
+
+## Common services
+
+Some services you may encounter in Linux and cybersecurity labs:
+
+| Service          | Description           |
+| ---------------- | --------------------- |
+| `ssh`            | Remote access via SSH |
+| `apache2`        | Apache web server     |
+| `nginx`          | Nginx web server      |
+| `mysql`          | MySQL database server |
+| `cron`           | Scheduled tasks       |
+| `NetworkManager` | Network management    |
+
+---
+
+## Quick reference
+
+```bash
+systemctl status <service>          # Check status
+sudo systemctl start <service>      # Start
+sudo systemctl stop <service>       # Stop
+sudo systemctl restart <service>   # Restart
+sudo systemctl reload <service>     # Reload configuration
+sudo systemctl enable <service>     # Enable at boot
+sudo systemctl disable <service>    # Disable at boot
+sudo systemctl enable --now <service>   # Enable + start
+sudo systemctl disable --now <service>  # Disable + stop
+```
