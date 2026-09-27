@@ -201,11 +201,3 @@ sudo systemctl enable --now ssh
 * `journalctl` → View service and system logs
 * `ps` → View running processes
 * `ss` → View network connections and listening ports
-       # Stop
-sudo systemctl restart <service>   # Restart
-sudo systemctl reload <service>     # Reload configuration
-sudo systemctl enable <service>     # Enable at boot
-sudo systemctl disable <service>    # Disable at boot
-sudo systemctl enable --now <service>   # Enable + start
-sudo systemctl disable --now <service>  # Disable + stop
-```
