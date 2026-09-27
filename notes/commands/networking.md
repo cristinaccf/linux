@@ -334,4 +334,97 @@ cat /etc/hostname
 
 ## 🧪 Basic network reconnaissance
 
-When starting to investigate a Linux
+When starting to investigate a Linux machine, these commands provide a quick overview:
+
+### 1. Check interfaces
+
+```bash
+ip a
+```
+
+### 2. Check routes
+
+```bash
+ip r
+```
+
+### 3. Check listening ports
+
+```bash
+sudo ss -tulpn
+```
+
+### 4. Check DNS configuration
+
+```bash
+cat /etc/resolv.conf
+```
+
+### 5. Check local hostname resolution
+
+```bash
+cat /etc/hosts
+```
+
+### 6. Test connectivity
+
+```bash
+ping -c 4 <IP>
+```
+
+---
+
+## 🧠 Quick reference
+
+| Command      | What it does                            |
+| ------------ | --------------------------------------- |
+| `ip a`       | 📡 Show interfaces and IP addresses     |
+| `ip r`       | 🗺️ Show routing table                  |
+| `ping`       | 📶 Test connectivity                    |
+| `traceroute` | 🛣️ Trace network path                  |
+| `ss`         | 🔌 Show connections and listening ports |
+| `nslookup`   | 🌍 Query DNS                            |
+| `dig`        | 🔎 Perform detailed DNS queries         |
+| `curl`       | 🌐 Make HTTP/network requests           |
+| `wget`       | 📥 Download files                       |
+| `hostname`   | 🖥️ Show hostname                       |
+| `getent`     | 🔍 Query system databases               |
+
+---
+
+## 🧩 Useful options to remember
+
+```text
+ip a
+    → Interfaces + IP addresses
+
+ip r
+    → Routing table
+
+ss -tuln
+    → Listening TCP/UDP ports
+
+sudo ss -tulpn
+    → Listening ports + processes
+
+ping -c 4 <IP>
+    → Send 4 ICMP packets
+
+curl -I <URL>
+    → Show HTTP headers
+
+curl -L <URL>
+    → Follow redirects
+
+dig <domain>
+    → DNS query
+```
+
+---
+
+### 🔗 Related topics
+
+* `services.md` → System services
+* `processes.md` → Running processes
+* `filesystem.md` → Files and directories
+* `permissions.md` → Permissions and ownership
